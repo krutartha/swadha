@@ -1,0 +1,38 @@
+# GitHub Pages Configuration
+title: Swadhā Life
+description: Rooted in Wisdom. Crafted with Intention.
+url: "https://krutartha.github.io"
+baseurl: "/swadha"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+relative_links:
+  enabled: true
+  collections: true
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# Plugins
+plugins:
+  - jekyll-relative-links
+
+# Exclude from processing
+exclude:
+  - .git/
+  - .github/
+  - node_modules/
+  - vendor/
+  - color_palettes.py

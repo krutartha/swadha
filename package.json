@@ -1,0 +1,25 @@
+{
+  "name": "swadha-life-website",
+  "version": "1.0.0",
+  "description": "Swadhā Life - Rooted in Wisdom. Crafted with Intention.",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 live_server.py",
+    "dev:simple": "python3 dev_server.py",
+    "dev:bash": "./dev.sh",
+    "serve": "python3 -m http.server 8000",
+    "live-server": "npx live-server --port=8000 --open=/index.html"
+  },
+  "keywords": [
+    "swadha",
+    "ayurvedic",
+    "wellness",
+    "hospitality",
+    "sustainability"
+  ],
+  "author": "Swadhā Life",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
