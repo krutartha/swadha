@@ -1,19 +1,735 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Svadhaa Naturals — Brand Preview</title>
-    <meta http-equiv="refresh" content="0; url=palettes.html" />
-    <link rel="canonical" href="palettes.html" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swadhā Life — Rooted in Wisdom. Crafted with Intention.</title>
+    <meta name="description" content="Eco-luxury Ayurvedic wellness kits for conscious hospitality. Crafted with intention, made for impact.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rasa:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <style>
-      body { font-family: -apple-system, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif; padding: 40px; }
-      a { color: #3A5A40; }
+        /* CSS Variables for Elemental Harmony Palette */
+        :root {
+            --sacred-fire: #FF6B35;
+            --pure-water: #4ECDC4;
+            --solar-energy: #FF8C42;
+            --spirit-air: #8B4513;
+            --vital-earth: #4CAF50;
+            --sacred-ground: #5D4037;
+            
+            /* Additional supporting colors */
+            --ivory: #F8F4EC;
+            --charcoal: #2C2C2C;
+            --soft-gold: #E6B17A;
+            --sage: #9CAF88;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--charcoal);
+            background-color: var(--ivory);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Rasa', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(248, 244, 236, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Rasa', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--sacred-ground);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--sacred-fire);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--ivory) 0%, #F0EBE0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23FF6B35" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%234ECDC4" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="%23FF8C42" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            color: var(--sacred-ground);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--spirit-air);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--sacred-fire);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--solar-energy);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--sacred-ground);
+            border: 2px solid var(--sacred-ground);
+        }
+
+        .btn-secondary:hover {
+            background: var(--sacred-ground);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-alt {
+            background: linear-gradient(135deg, #F0EBE0 0%, var(--ivory) 100%);
+        }
+
+        .section-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-content h2 {
+            color: var(--sacred-ground);
+            margin-bottom: 1rem;
+        }
+
+        .section-content p {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, var(--ivory) 0%, #F0EBE0 100%);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-text {
+            text-align: left;
+        }
+
+        .about-text h2 {
+            color: var(--sacred-ground);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .sanskrit {
+            font-family: 'Rasa', serif;
+            font-size: 1.2rem;
+            color: var(--sacred-fire);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        /* Mission Section */
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .mission-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--sacred-fire);
+        }
+
+        .mission-card h3 {
+            color: var(--sacred-ground);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .mission-card p {
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+
+        /* Offerings Section */
+        .offerings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .offering-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .offering-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .offering-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: var(--pure-water);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .offering-card h3 {
+            color: var(--sacred-ground);
+            margin-bottom: 1rem;
+        }
+
+        .offering-card p {
+            color: var(--charcoal);
+            font-size: 0.95rem;
+        }
+
+        /* Why Section */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .why-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .why-card h3 {
+            color: var(--vital-earth);
+            margin-bottom: 1rem;
+        }
+
+        .checklist {
+            list-style: none;
+            text-align: left;
+        }
+
+        .checklist li {
+            padding: 0.5rem 0;
+            color: var(--charcoal);
+        }
+
+        .checklist li::before {
+            content: '✅';
+            margin-right: 0.5rem;
+            color: var(--vital-earth);
+        }
+
+        /* Contact Section */
+        .contact-form {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--sacred-ground);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #E0E0E0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--sacred-fire);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--sacred-ground);
+            color: white;
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Rasa', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-tagline {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 2rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .section {
+                padding: 3rem 0;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
-  </head>
-  <body>
-    <p>Redirecting to <a href="palettes.html">palettes.html!</a>…</p>
-  </body>
-  </html>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">Swadhā Life</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#offerings">Offerings</a></li>
+                <li><a href="#why">Why Swadhā</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">🌿 Rooted in Wisdom.<br>Crafted with Intention.</h1>
+                <p class="hero-subtitle">Eco-luxury Ayurvedic wellness kits for conscious hospitality.</p>
+                <div class="cta-buttons">
+                    <a href="#offerings" class="btn btn-primary">🡢 Explore Our Kits</a>
+                    <a href="#contact" class="btn btn-secondary">🡢 Partner With Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="sanskrit">Swadhā (स्वधा): A sacred offering. An inner invocation. A return to essence.</p>
+                    <p>Swadhā Life, formerly known as Svadhaa Naturals, is an eco-luxury brand rooted in India's ancient wisdom and dedicated to conscious hospitality. Our purpose is simple: to create beautiful, biodegradable wellness kits that nourish the guest, uplift the maker, and respect the Earth.</p>
+                    <p>Each kit reflects centuries of Ayurvedic care, artisan skill, and design-led sustainability — thoughtfully curated for hotels, retreats, airlines, and conscious brands seeking to replace plastic with purpose.</p>
+                </div>
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>Born at the intersection of wellness, sustainability, and Indian heritage, Swadhā Life represents more than just products — we represent a philosophy of conscious living and mindful hospitality.</p>
+                    <p>Every element of our kits is thoughtfully designed to honor both the guest experience and the artisan communities who craft them, creating a beautiful cycle of respect, dignity, and purpose.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="section section-alt">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title">Mission · Vision · Purpose</h2>
+                <div class="mission-grid">
+                    <div class="mission-card">
+                        <h3>MISSION</h3>
+                        <p>To craft biodegradable, Ayurvedic wellness kits that elevate hospitality experiences while creating dignified livelihoods for artisan communities across India.</p>
+                    </div>
+                    <div class="mission-card">
+                        <h3>VISION</h3>
+                        <p>To become the global benchmark in conscious hospitality, where every product honors the Earth, empowers artisans, and celebrates India's timeless cultural wisdom.</p>
+                    </div>
+                    <div class="mission-card">
+                        <h3>PURPOSE</h3>
+                        <p>To transform everyday travel and guest experiences into moments of wellness, intention, and impact — by infusing each product with beauty, sustainability, and soul.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offerings Section -->
+    <section id="offerings" class="section">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title">What We Offer</h2>
+                <p class="subtitle">Conscious hospitality essentials for mindful travel and stays.</p>
+                <div class="offerings-grid">
+                    <div class="offering-card">
+                        <div class="offering-icon">🧴</div>
+                        <h3>Eco-Luxury Ayurvedic Wellness Kits</h3>
+                        <p>Complete wellness experiences crafted with ancient wisdom and modern sustainability.</p>
+                    </div>
+                    <div class="offering-card">
+                        <div class="offering-icon">✨</div>
+                        <h3>Artisan-crafted Amenities</h3>
+                        <p>Handcrafted essentials that tell a story of tradition, skill, and conscious choice.</p>
+                    </div>
+                    <div class="offering-card">
+                        <div class="offering-icon">🏷️</div>
+                        <h3>White-labeled Biodegradable Essentials</h3>
+                        <p>Custom-branded solutions that align with your sustainability goals.</p>
+                    </div>
+                    <div class="offering-card">
+                        <div class="offering-icon">🎁</div>
+                        <h3>Custom-curated Gifting & Experience Kits</h3>
+                        <p>Thoughtful collections designed for memorable guest experiences.</p>
+                    </div>
+                </div>
+                <div class="cta-buttons" style="margin-top: 3rem;">
+                    <a href="#contact" class="btn btn-primary">🡢 Request Our Product Catalogue</a>
+                    <a href="#contact" class="btn btn-secondary">🡢 Enquire for Collaboration</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Swadhā Section -->
+    <section id="why" class="section section-alt">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title">Why Swadhā Life?</h2>
+                <p class="subtitle">Beauty. Impact. Intention.</p>
+                <p>Swadhā Life is for hospitality brands that value conscious luxury over convenience, authenticity over mass production, and purpose over plastic.</p>
+                
+                <div class="why-grid">
+                    <div class="why-card">
+                        <h3>Our Commitments</h3>
+                        <ul class="checklist">
+                            <li>Plastic-free & biodegradable</li>
+                            <li>Designed using Ayurvedic principles</li>
+                            <li>Made by women artisans & SHGs across India</li>
+                            <li>Scalable for hotels, retreats, and wellness experiences</li>
+                            <li>Aligned with global sustainability benchmarks (SDGs, ESG)</li>
+                        </ul>
+                    </div>
+                    <div class="why-card">
+                        <h3>Our Impact</h3>
+                        <ul class="checklist">
+                            <li>Eliminating single-use plastic from hospitality</li>
+                            <li>Uplifting rural artisans with dignified livelihoods</li>
+                            <li>Reviving Ayurvedic & indigenous craft knowledge</li>
+                            <li>Designing for circularity and minimal waste</li>
+                            <li>Building ecosystems of conscious change</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="cta-buttons" style="margin-top: 3rem;">
+                    <a href="#contact" class="btn btn-primary">🡢 Let's co-create the future of hospitality</a>
+                    <a href="#contact" class="btn btn-secondary">🡢 Partner With Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title">Work With Us</h2>
+                <p class="subtitle">Whether you're a hotel, retreat, airline, or wellness brand — we'd love to co-create with you.</p>
+                <p>📍 Based in India · Shipping Globally<br>
+                📧 hello@swadhalife.com</p>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="inquiry">Type of Inquiry *</label>
+                        <select id="inquiry" name="inquiry" required>
+                            <option value="">Select an option</option>
+                            <option value="partnership">Partnership Inquiry</option>
+                            <option value="catalogue">Request Product Catalogue</option>
+                            <option value="collaboration">Collaboration Opportunity</option>
+                            <option value="general">General Inquiry</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Tell us about your hospitality needs and how we can help..."></textarea>
+                    </div>
+                    <div class="cta-buttons">
+                        <button type="submit" class="btn btn-primary">🡢 Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Swadhā Life</div>
+                <p class="footer-tagline">Rooted in Indian Wisdom · Crafted with Consciousness · Made for the World</p>
+                <div class="footer-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Shop (Coming Soon)</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>📄 Terms of Use | Privacy Policy | Shipping & Returns (Coming Soon)<br>
+                    © Swadhā Life 2025. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handling
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to your backend
+            alert('Thank you for your message! We\'ll get back to you soon.');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(248, 244, 236, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(248, 244, 236, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
 
 

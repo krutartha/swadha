@@ -2,8 +2,16 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.colors import to_rgb
 
-# Define the three color palettes
+# Define the color palettes
 palettes = {
+    "Elemental Harmony": {
+        "Sacred Fire": "#FF6B35",
+        "Pure Water": "#4ECDC4", 
+        "Solar Energy": "#FF8C42",
+        "Spirit Air": "#8B4513",
+        "Vital Earth": "#4CAF50",
+        "Sacred Ground": "#5D4037",
+    },
     "Earthy Elegance": {
         "Terracotta": "#C95F47",
         "Sandalwood Beige": "#E5D3B3",
@@ -28,7 +36,7 @@ palettes = {
 }
 
 # Plot the color palettes
-fig, axs = plt.subplots(len(palettes), 1, figsize=(12, 6), constrained_layout=True)
+fig, axs = plt.subplots(len(palettes), 1, figsize=(12, 8), constrained_layout=True)
 
 for i, (palette_name, colors) in enumerate(palettes.items()):
     hex_colors = list(colors.values())
